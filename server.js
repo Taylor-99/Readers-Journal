@@ -53,7 +53,7 @@ app.get('/', function (req, res) {
 
 //use controllers
 app.use('/users', userCtrl);
-app.use('/session', sessionCtrl);
+app.use('/sessions', sessionCtrl);
 app.use('/library', libraryCtrl)
 
 // App Listen

@@ -6,7 +6,7 @@ const db = require('../models');
 router.get('/new', (req, res)=> {
     res.render('sessions/newSession.ejs', { 
         currentUser: req.session.currentUser 
-    })
+    });
 });
 
 router.post('/', async (req, res)=> {
@@ -14,7 +14,8 @@ router.post('/', async (req, res)=> {
     const foundUser = await db.User.findOne({ username: req.body.username});
     // after we find the user compare paasswords
     if (!foundUser){
-        res.render('sessions/sessionUserNotFound.ejs')
+        res.render('sessions/newSessionNotFound.ejs')
+        // res.send('cannot find user')
     }
     // if the passwords match, create a new session
     else if( await bcrypt.compareSync(req.body.password, foundUser.password)){
@@ -24,7 +25,8 @@ router.post('/', async (req, res)=> {
     }
         // if the passwords don't match, send an error message
         else{
-            res.send('Password does not match')
+            res.render('sessions/newSessionNotFound.ejs');
+            // res.send('password does not match');
         }
 });
 
