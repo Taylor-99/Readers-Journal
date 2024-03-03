@@ -10,3 +10,12 @@ const db = mongoose.connection
 db.on('connected', function() {
   console.log(`Connected to MongoDB ${db.name} at ${db.host}:${db.port}`);
 });
+
+// Export models to `server.js`
+module.exports = {
+  User: require('./user'),
+  UserProfile: require('./profile'),
+  Reading: require('./reading'),
+  Comment: require('./chapterComment'),
+  Chapter: require('./chapter-section')
+};

@@ -10,6 +10,11 @@ const session = require('express-session')
 // Require the db connection and models
 const db = require('./models');
 
+//Controllers
+const userCtrl = require('./controllers/userController.js');
+const sessionCtrl = require('./controllers/sessionController');
+const libraryCtrl = require('./controllers/libraryController');
+
 // Create the Express app
 const app = express();
 const PORT = 3000;
@@ -24,7 +29,7 @@ liveReloadServer.server.once("connection", () => {
 });
 
 // Configure the app (app.set)
-  
+
   
 // Mount middleware (app.use)
 app.use(express.static('public'));
@@ -41,6 +46,15 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+
+app.get('/', function (req, res) {
+    res.redirect('/library')
+  });
+
+//use controllers
+app.use('/users', userCtrl);
+app.use('/session', sessionCtrl);
+app.use('/library', libraryCtrl)
 
 // App Listen
 app.listen(PORT, ()=> {
