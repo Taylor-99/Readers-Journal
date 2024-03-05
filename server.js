@@ -1,6 +1,8 @@
 
 // Dependencies
+require('dotenv').config()
 const express = require('express');
+const path = require('path')
 //include the method-override package
 const methodOverride = require('method-override');
 const livereload = require("livereload");
@@ -8,7 +10,7 @@ const connectLiveReload = require("connect-livereload");
 const session = require('express-session')
 
 // Require the db connection and models
-const db = require('./models');
+// const db = require('./models');
 
 //Controllers
 const userCtrl = require('./controllers/userController.js');
@@ -29,7 +31,8 @@ liveReloadServer.server.once("connection", () => {
 });
 
 // Configure the app (app.set)
-
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
   
 // Mount middleware (app.use)
 app.use(express.static('public'));
@@ -52,11 +55,11 @@ app.get('/', function (req, res) {
   });
 
 //use controllers
+app.use('/library', libraryCtrl)
 app.use('/users', userCtrl);
 app.use('/sessions', sessionCtrl);
-app.use('/library', libraryCtrl)
 
 // App Listen
 app.listen(PORT, ()=> {
-    console.log("Listening to port ", PORT);
+    console.log("Listening to port", PORT);
   });  

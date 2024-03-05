@@ -12,16 +12,14 @@ router.get('/new', (req, res)=> {
 router.post('/', async (req, res)=> {
     // Find the user trying to log in ( so that we can compare passwords)
     const foundUser = await db.User.findOne({ username: req.body.username});
-    // after we find the user compare paasswords
+    // after we find the user compare passwords
     if (!foundUser){
         res.render('sessions/newSessionNotFound.ejs')
         // res.send('cannot find user')
     }
     // if the passwords match, create a new session
     else if( await bcrypt.compareSync(req.body.password, foundUser.password)){
-        console.log("user found")
         req.session.currentUser = foundUser
-        res.send('logged in')
     }
         // if the passwords don't match, send an error message
         else{

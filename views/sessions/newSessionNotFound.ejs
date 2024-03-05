@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
+
+<%- include('../partials/loginheader') %>
+
 <body>
-    <h1>Login</h1>
-    <p>Username / Password not Found!</p>
-    <form action="/sessions" method="POST">
-        Username: <input required type="text" name="username"/><br>
-        Password: <input required type="text" name="password"><br>
-        <input type="submit" name="" value="Login"/>
-    </form>
+    <div class="loginscreen">
+        <h1 class="loginheading">Login</h1>
+        <p id="notfound">Username / Password not Found!</p>
+        <form action="/sessions" method="POST">
+            <span>Username:</span> <input required type="text" name="username"/><br>
+            <span>Password:</span> <input required type="text" name="password"><br>
+            <input type="submit" name="" value="Login" class="loginbutton"/>
+        </form>
+    </div>
 </body>
 </html>

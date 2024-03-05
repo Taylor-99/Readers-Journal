@@ -1,0 +1,99 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f0e3d2;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, 20%);
+    margin: 0;
+}
+
+header{
+    grid-row: 1/5;
+    background: #c5a491;
+    margin: 0;
+    font-family: "Delius Swash Caps", cursive;
+    font-size: 2vw;
+    padding: .5em;
+}
+
+#loginintro{
+    font-family: "Roboto", sans-serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50em;
+}
+
+#loginheader{
+    font-size: 2.5em;
+    margin-left: 2.5em;
+    text-wrap: balance;
+}
+
+#logintext{
+    font-size: 1em;
+    margin-left: 10em;
+    text-wrap: balance;
+}
+
+#authenticationButtons{
+    width: 20em; 
+    margin: 0 auto;
+}
+
+#login{
+    display: block;
+    width: 20vw;
+    height: 3vw;
+    background: #b6b19e;
+    padding: 1vw;
+    text-align: center;
+    border-radius: 5px;
+    color:seashell;
+    font-weight: bold;
+    line-height: 1vw;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2em;
+}
+
+#or{
+    display: block;
+    font-size: 1.2em;
+    font-family: "Poppins", sans-serif;
+    margin-left: 4em;
+}
+
+#create{
+    display: block;
+    width: 20vw;
+    height: 5vw;
+    background: #b6b19e;
+    padding: 1vw;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 1.5vw;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2em;
+}
+
+#notfound{
+    color:maroon;
+    border: .05em solid red;
+    width: 15em;
+    font-size: 1.2em;
+    background-color: lightpink;
+}
+
+#loginscreen{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50em;
+}

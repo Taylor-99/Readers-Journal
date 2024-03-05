@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <a href="/sessions/new">Login</a>
-    <a href="/users/new">Create a New Account</a>
+
+<%- include('./partials/loginheader') %>
+    <div id="loginintro">
+        <p id="loginheader">Welcome to Reader's Journal</p>
+        <p id="logintext">The perfect companion to capture, cherish, and reflect on every page-turning moment in your literary voyage.</p>
+    </div>
+    <br><br>
+    <div id="authenticationButtons">
+        <a href="/sessions/new" id="login">Login</a>
+        <p id="or">-- or --</p>
+        <a href="/users/new" id="create">Create a <br> New Account</a>
+    </div>
+
 </body>
 </html>
