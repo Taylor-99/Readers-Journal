@@ -16,6 +16,7 @@ const session = require('express-session')
 const userCtrl = require('./controllers/userController.js');
 const sessionCtrl = require('./controllers/sessionController');
 const libraryCtrl = require('./controllers/libraryController');
+const profileCtrl = require('./controllers/userProfileController');
 
 // Create the Express app
 const app = express();
@@ -58,6 +59,7 @@ app.get('/', function (req, res) {
 app.use('/library', libraryCtrl)
 app.use('/users', userCtrl);
 app.use('/sessions', sessionCtrl);
+app.use('/profile', profileCtrl);
 
 // App Listen
 app.listen(PORT, ()=> {

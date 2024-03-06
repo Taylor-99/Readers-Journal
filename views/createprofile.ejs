@@ -1,0 +1,26 @@
+
+<%- include('./partials/loginheader') %>
+
+<form action="/profile" method="POST">
+    <label for="name">Name: </label>
+    <br>
+    <input type="text" name="name" required>
+    <br>
+
+    <label for="bio">Tell us about yourself: </label>
+    <br>
+    <input type="text" name="bio">
+    <br>
+
+    <label for="interest">What are your interests or hobbies: </label>
+    <br>
+    <input type="text" name="interest" placeholder="comma seperated">
+    <br>
+
+    <label for="image">Upload a Profile Picture: </label>
+    <br>
+    <input type="text" name="image" placeholder=".png, .jpeg, .jpg, etc.">
+    <br>
+
+    <input type="submit" value="Submit">
+</form>

@@ -14,8 +14,11 @@ router.post('/', async (req, res) => {
     // hash the password
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     // create the user
-    await db.User.create(req.body); // req.body has form data to create new user
-    res.redirect('/');
+    let newUser = await db.User.create(req.body); // req.body has form data to create new user
+    let userName = newUser.username;
+    console.log(userName);
+
+    res.redirect(`/profile/new/${userName}`);
 });
 
 module.exports = router
