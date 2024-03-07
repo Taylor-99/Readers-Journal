@@ -2,6 +2,7 @@
 
 const router = require("express").Router();
 const db = require('../models');
+const profile = require("../models/profile");
 
 function interestList(listString){
 
@@ -11,21 +12,28 @@ function interestList(listString){
 }
 
 // New profile form
-router.get('/new/:username', (req, res) => {
-    console.log("new profile");
-    res.render('createprofile.ejs');
+router.get('/new/:addusername/:userid', (req, res) => {
+    let addUsername = req.params.addusername;
+    let newUserId = req.params.userid;
+    res.render('createprofile.ejs', {addUsername, newUserId});
 });
 
 // Post route to create profile
-router.post('/', async (req, res) => {
-
+router.post('/:addun/:uid', async (req, res) => {
     req.body.interest = interestList(req.body.interest);
 
-    let newProfile = await db.UserProfile.create(req.body);
+    let newUserProfile = {
+        name: req.body.name,
+        username: req.params.addun,
+        image: req.body.image,
+        bio: req.body.bio,
+        interest: req.body.interest,
+        user:req.params.uid
+    };
 
-    console.log(newProfile);
-
-    res.redirect('/');
+    await db.UserProfile.create(newUserProfile);
+    
+    res.redirect('/sessions/new');
 });
 
 module.exports = router

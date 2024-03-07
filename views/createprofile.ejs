@@ -1,7 +1,7 @@
 
 <%- include('./partials/loginheader') %>
 
-<form action="/profile" method="POST">
+<form action="/profile/<%= addUsername %>/<%= newUserId %>" method="POST">
     <label for="name">Name: </label>
     <br>
     <input type="text" name="name" required>

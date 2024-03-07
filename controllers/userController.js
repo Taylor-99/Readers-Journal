@@ -13,12 +13,20 @@ router.get('/new', (req, res) => {
 router.post('/', async (req, res) => {
     // hash the password
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
-    // create the user
-    let newUser = await db.User.create(req.body); // req.body has form data to create new user
-    let userName = newUser.username;
-    console.log(userName);
+    
+    let foundUser = await db.User.findOne({username: req.body.username});
 
-    res.redirect(`/profile/new/${userName}`);
+    console.log(!foundUser)
+
+    if(!foundUser === true){
+        // create the user
+        let newUser = await db.User.create(req.body); // req.body has form data to create new user
+        res.redirect(`/profile/new/${req.body.username}/${newUser._id}`);
+    }
+    else{
+        res.render('users/newUserExist.ejs');
+    }
+
 });
 
 module.exports = router
