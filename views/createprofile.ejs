@@ -1,26 +1,33 @@
 
 <%- include('./partials/loginheader') %>
 
-<form action="/profile/<%= addUsername %>/<%= newUserId %>" method="POST">
-    <label for="name">Name: </label>
-    <br>
-    <input type="text" name="name" required>
-    <br>
+<div id="createscreen">
 
-    <label for="bio">Tell us about yourself: </label>
-    <br>
-    <input type="text" name="bio">
-    <br>
+    <p class="loginheader">Create Profile</p>
 
-    <label for="interest">What are your interests or hobbies: </label>
-    <br>
-    <input type="text" name="interest" placeholder="comma seperated">
-    <br>
+    <form action="/profile/<%= addUsername %>/<%= newUserId %>" method="POST">
+        <label for="name" class="formtext">Name: </label>
+        <br>
+        <input type="text" name="name" required class="createinput">
+        <br>
 
-    <label for="image">Upload a Profile Picture: </label>
-    <br>
-    <input type="text" name="image" placeholder=".png, .jpeg, .jpg, etc.">
-    <br>
+        <label for="bio" class="formtext">Tell us about yourself: </label>
+        <br>
+        <textarea rows="5" cols="38" type="text" name="bio" id="bioinput">
+        </textarea>
+        <br>
 
-    <input type="submit" value="Submit">
-</form>
+        <label for="interest" class="formtext">What are your interests or hobbies: </label>
+        <br>
+        <input type="text" name="interest" placeholder="comma seperated" class="createinput">
+        <br>
+
+        <label for="image" class="formtext">Upload a Profile Picture: </label>
+        <br>
+        <input type="text" name="image" placeholder=".png, .jpeg, .jpg, etc." class="createinput">
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</div>

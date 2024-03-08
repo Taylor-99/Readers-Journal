@@ -1,12 +1,18 @@
 
 <%- include('../partials/loginheader') %>
 
-    <h1>Sign Up</h1>
-    <p>Username already exist</p>
-    <form action="/users" method="POST">
-        Username: <input required type="text" name="username"/><br>
-        Password: <input required type="text" name="password"><br>
-        <input type="submit" name="" value="Sign Up"/>
-    </form>
+    <div class="loginscreen">
+        <p class="loginheader">Sign Up</p>
+        <br>
+        <p id="notfound">Username already exist</p>
+        <br>
+        <form action="/users" method="POST">
+            <span class="formtext">Username:</span> <input required type="text" name="username" class="logininput"/>
+            <br><br>
+            <span class="formtext">Password:</span> <input required type="text" name="password" class="logininput">
+            <br><br>
+            <input type="submit" name="" value="Sign Up"/>
+        </form>
+    </div>
 </body>
 </html>

@@ -16,8 +16,6 @@ router.post('/', async (req, res) => {
     
     let foundUser = await db.User.findOne({username: req.body.username});
 
-    console.log(!foundUser)
-
     if(!foundUser === true){
         // create the user
         let newUser = await db.User.create(req.body); // req.body has form data to create new user

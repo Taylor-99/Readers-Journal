@@ -5,13 +5,12 @@
 
 body{
     background-color: #f0e3d2;
-    grid-template-columns: repeat(5, 20%);
-    grid-template-rows: repeat(5, 20%);
+    /* grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, 20%); */
     margin: 0;
 }
 
 header{
-    grid-row: 1/5;
     background: #c5a491;
     margin: 0;
     font-family: "Delius Swash Caps", cursive;
@@ -19,7 +18,16 @@ header{
     padding: .5em;
 }
 
-#loginintro{
+#auth{
+    position: relative;
+    top: 300px;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+/* https://blog.hubspot.com/website/center-div-css */
+
+#authintro{
     font-family: "Roboto", sans-serif;
     display: block;
     margin-left: auto;
@@ -27,21 +35,26 @@ header{
     max-width: 50em;
 }
 
-#loginheader{
-    font-size: 2.5em;
-    margin-left: 2.5em;
-    text-wrap: balance;
+#authheader{
+    font-size: 2.5vw;
+    /* margin-left: 2.5em; */
+    text-align: center;
+    font-weight: 400;
 }
 
-#logintext{
-    font-size: 1em;
-    margin-left: 10em;
-    text-wrap: balance;
+#authtext{
+    font-size: 1.5vw;
+    /* margin-left: 10em; */
+    text-align: center;
+    font-weight: 300;
 }
 
 #authenticationButtons{
-    width: 20em; 
-    margin: 0 auto;
+    position: relative;
+    top: 5vw;
+    left: 89vw;
+    transform: translate(-50%, -50%);
+    padding: 10px;
 }
 
 #login{
@@ -57,14 +70,15 @@ header{
     line-height: 1vw;
     text-decoration: none;
     font-family: "Poppins", sans-serif;
-    font-size: 1.2em;
+    font-size: 1.5vw;
+    font-weight: 500;
 }
 
 #or{
     display: block;
-    font-size: 1.2em;
+    font-size: 2vw;
     font-family: "Poppins", sans-serif;
-    margin-left: 4em;
+    margin-left: 6.5vw;
 }
 
 #create{
@@ -80,7 +94,8 @@ header{
     line-height: 1.5vw;
     text-decoration: none;
     font-family: "Poppins", sans-serif;
-    font-size: 1.2em;
+    font-size: 1.5vw;
+    font-weight: 500;
 }
 
 #notfound{
@@ -91,9 +106,71 @@ header{
     background-color: lightpink;
 }
 
-#loginscreen{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 50em;
+.loginscreen{
+    position: relative;
+    top: 300px;
+    left: 90vw;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.loginheader{
+    font-size: 2.5vw;
+    font-weight: 425;
+    margin-left: 5vw;
+}
+
+.formtext{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5vw;
+}
+
+input[type=text] {
+    border: 2px solid rgb(175, 175, 175);
+    border-radius: 4px;
+    margin: 10px 0;
+    font-size: 1.5vw;
+    font-family: "Roboto", sans-serif;
+    cursor: text;
+}
+
+.logininput{
+    padding: 5px 10px;
+}
+
+input[type=submit]{
+    box-sizing: border-box;
+    background: #b6b19e;
+    border: .5px solid white;
+    border-radius: 4px;
+    padding: 10px 25px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.4vw;
+    color: seashell;
+    cursor: pointer;
+    max-width: 40ch;
+}
+
+#createscreen{
+    position: relative;
+    top: 300px;
+    left: 85vw;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.createinput{
+    width: 425px;
+    height: 35px;
+}
+
+#bioinput{
+    text-align: left;
+    resize: none;
+    vertical-align: text-top;
+    border: 2px solid rgb(175, 175, 175);
+    border-radius: 4px;
+    font-size: 1.5vw;
+    font-family: "Roboto", sans-serif;
+    cursor: text;
 }

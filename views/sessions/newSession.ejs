@@ -3,10 +3,12 @@
 
 <body>
     <div class="loginscreen">
-        <h1 class="loginheading">Login</h1>
+        <p class="loginheader">Login</p>
         <form action="/sessions" method="POST" class="loginform">
-            <span>Username:</span> <input required type="text" name="username"/><br>
-            <span>Password:</span> <input required type="text" name="password"><br>
+            <span class="formtext">Username:</span> <input required type="text" name="username" class="logininput"/>
+            <br><br>
+            <span class="formtext">Password:</span> <input required type="text" name="password" class="logininput">
+            <br><br>
             <input type="submit" name="" value="Login" class="loginbutton"/>
         </form>
     </div>
