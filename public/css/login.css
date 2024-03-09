@@ -5,14 +5,12 @@
 
 body{
     background-color: #f0e3d2;
-    /* grid-template-columns: repeat(5, 20%);
-    grid-template-rows: repeat(5, 20%); */
     margin: 0;
 }
 
 header{
     background: #c5a491;
-    margin: 0;
+    margin: 100;
     font-family: "Delius Swash Caps", cursive;
     font-size: 2vw;
     padding: .5em;
@@ -37,24 +35,21 @@ header{
 
 #authheader{
     font-size: 2.5vw;
-    /* margin-left: 2.5em; */
     text-align: center;
     font-weight: 400;
 }
 
 #authtext{
     font-size: 1.5vw;
-    /* margin-left: 10em; */
     text-align: center;
     font-weight: 300;
 }
 
 #authenticationButtons{
-    position: relative;
-    top: 5vw;
-    left: 89vw;
-    transform: translate(-50%, -50%);
-    padding: 10px;
+    display: block;
+    margin-left: 40vw;
+    margin-right: 3vw;
+    max-width: 50em;
 }
 
 #login{
@@ -78,7 +73,7 @@ header{
     display: block;
     font-size: 2vw;
     font-family: "Poppins", sans-serif;
-    margin-left: 6.5vw;
+    /* margin-left: 6.5vw; */
 }
 
 #create{

@@ -1,0 +1,13 @@
+
+<%- include('../partials/nav.ejs') %>
+
+<h1>Library</h1>
+   <ul> 
+        <% readings.forEach((item, index) => { %>
+        <li>
+            <img src="<%= item.image %>">
+            <p><%= item.title %></p>
+            <p> <%= item.rating %></p>
+        </li>
+        <% }) %>
+    </ul>
