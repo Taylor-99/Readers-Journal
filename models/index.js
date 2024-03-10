@@ -17,5 +17,5 @@ module.exports = {
   UserProfile: require('./profile'),
   Reading: require('./reading'),
   Comment: require('./chapterComment'),
-  Chapter: require('./chapter-section')
+  Chapter: require('./chapter')
 };

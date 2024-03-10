@@ -1,8 +1,6 @@
 
-
 const router = require("express").Router();
 const db = require('../models');
-const profile = require("../models/profile");
 
 function interestList(listString){
 

@@ -5,7 +5,7 @@
 
     <p class="loginheader">Create Profile</p>
 
-    <form action="/profile/<%= addUsername %>/<%= newUserId %>" method="POST">
+    <form action="/userprofile/<%= addUsername %>/<%= newUserId %>" method="POST">
         <label for="name" class="formtext">Name: </label>
         <br>
         <input type="text" name="name" required class="createinput">
@@ -13,8 +13,7 @@
 
         <label for="bio" class="formtext">Tell us about yourself: </label>
         <br>
-        <textarea rows="5" cols="38" type="text" name="bio" id="bioinput">
-        </textarea>
+        <textarea rows="5" cols="38" name="bio" placeholder="Add a Bio" id="bioinput"></textarea>
         <br>
 
         <label for="interest" class="formtext">What are your interests or hobbies: </label>

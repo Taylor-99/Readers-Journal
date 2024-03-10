@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
     if(!foundUser === true){
         // create the user
         let newUser = await db.User.create(req.body); // req.body has form data to create new user
-        res.redirect(`/profile/new/${req.body.username}/${newUser._id}`);
+        res.redirect(`/userprofile/new/${req.body.username}/${newUser._id}`);
     }
     else{
         res.render('users/newUserExist.ejs');

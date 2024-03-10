@@ -1,36 +1,54 @@
 
 <%- include('../partials/nav.ejs') %>
 
-<p>Add New Reading</p>
+<h1>Add New Reading</h1>
 
-<form action="/library/" method="post">
+<form action="/library/" method="post" id="addform">
     <label for="title">Title:</label>
-
+    <br>
     <input type="text" name="title" placeholder="Enter the Title"/>
 
+    <br>
     <label for="author">Author:</label>
+    <br>
     <input type="text" name="author" placeholder="Enter The Author"/>
+    <br>
 
     <label for="description">Description:</label>
-    <input type="text" name="description" placeholder="Give a description of your reading"/>
+    <br>
+    <textarea rows="3" cols="38" name="description" placeholder="Give a description of your reading"></textarea>
+    <br>
 
     <label for="tags">Tags:</label>
+    <br>
     <input type="text" name="tags" placeholder="Comma seperated"/>
+    <br>
 
     <label for="image">Reading Cover:</label>
+    <br>
     <input type="text" name="image" placeholder="Enter the cover of the Reading"/>
+    <br>
 
-    <label for="chapter_section">Number of Chapters or Sections:</label>
-    <input type="number" name="chapter_section" placeholder="How many chapters or sections are in this reading"/>
+    <label for="chapter">Number of Chapters or Sections:</label>
+    <br>
+    <input type="number" name="chapter" placeholder="How many chapters or sections are in this reading"/>
+    <br>
 
-    <label for="review">Give a Review: </label>
-    <input type="text" name="review" placeholder="Give a review between 0 and 5"/>
+    <label for="rating">Give a Rating: </label>
+    <br>
+    <input type="number" name="rating" placeholder="Give a review between 0 and 5"/>
+    <br>
 
-    <label for="comment">Write a comment about the review: </label>
-    <input type="text" name="comment" placeholder="Write a comment"/>
+    <label for="review">Write a review about this reading: </label>
+    <br>
+    <textarea rows="3" cols="38" name="review" placeholder="Write a comment"></textarea>
+    <br>
 
-    <label for="favorite">Add to favorites: </label>
-    <input type="checkbox" name="favorite"/>
+    <div id="checkfavorite">
+        <label for="favorite">Add to favorites: &nbsp;</label>
+        <input type="checkbox" name="favorite"/>
+    </div>
+    <br>
     
-    <input type="submit" value="Add Reading"/>
+    <input type="submit" value="Add Reading" id="submitadd"/>
 </form>

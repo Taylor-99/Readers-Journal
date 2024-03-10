@@ -11,6 +11,22 @@ const isAuthentcated = require('../controllers/isAuthenticated');
 
 router.use(isAuthentcated);
 
+// function createSectionSchema(sectionNumber){
+
+//     sectionArray=[]
+//     for(c=0; c < sectionNumber; c++){
+
+//     }
+
+// }
+
+function tagList(listString){
+
+    let splitList = listString.split(",");
+
+    return splitList;
+}
+
 // I.N.D.U.C.E.S
 
 //Index
@@ -37,7 +53,13 @@ router.post("/", async (req, res) => {
 
     req.body.user = req.session.currentUser._id
 
-    let newReading = await db.Reading.create(req.body)
+    req.body.tags = tagList(req.body.tags)
+
+    let newReading = await db.Reading.create(req.body);
+
+    // let chapters = newReading
+
+    // createSectionSchema(req.body.section);
     
     res.send(newReading)
 })
