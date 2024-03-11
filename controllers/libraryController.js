@@ -47,7 +47,8 @@ function tagList(listString){
 //Index
 router.get('/', (req, res)=> {
 
-    currentUser: req.session.currentUser
+    // currentUser: req.session.currentUser
+    
     db.Reading.find({ user: req.session.currentUser._id }).then((readings) => {
         res.render("library/library-home.ejs", {
             readings: readings,
@@ -74,7 +75,7 @@ router.post("/", async (req, res) => {
 
     newReading.chapters = createSectionSchema(newReading.chapters[0], newReading._id);
     
-    res.send(newReading)
+    res.redirect('/');
 })
 
 //export so we can use this in other file
