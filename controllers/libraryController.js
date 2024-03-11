@@ -11,14 +11,29 @@ const isAuthentcated = require('../controllers/isAuthenticated');
 
 router.use(isAuthentcated);
 
-// function createSectionSchema(sectionNumber){
+function createSectionSchema(sectionNumber, idReading){
 
-//     sectionArray=[]
-//     for(c=0; c < sectionNumber; c++){
+    sectionNumber = Number(sectionNumber);
 
-//     }
+    let sectionArray = []
 
-// }
+    for(c=1; c <= sectionNumber; c++){
+
+        let newChapter = {
+            chaptername: c.toString(),
+            comments: [],
+            readingId: idReading
+        }
+
+        dbChapter = db.Chapter.create(newChapter)
+
+        sectionArray.push(dbChapter);
+
+    }
+
+    return sectionArray
+
+}
 
 function tagList(listString){
 
@@ -57,9 +72,7 @@ router.post("/", async (req, res) => {
 
     let newReading = await db.Reading.create(req.body);
 
-    // let chapters = newReading
-
-    // createSectionSchema(req.body.section);
+    newReading.chapters = createSectionSchema(newReading.chapters[0], newReading._id);
     
     res.send(newReading)
 })
