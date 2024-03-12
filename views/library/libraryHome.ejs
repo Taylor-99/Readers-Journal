@@ -5,8 +5,8 @@
    <ul> 
         <% readings.forEach((item, index) => { %>
         <li>
-            <img src="<%= item.image %>">
-            <p><%= item.title %></p>
+            <a href="/library/<%= item._id %>"><img src="<%= item.image %>"></a>
+            <a href="/library/<%= item._id %>"><%= item.title %></a>
             <p> <%= item.rating %></p>
         </li>
         <% }) %>

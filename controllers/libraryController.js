@@ -11,18 +11,16 @@ const isAuthentcated = require('../controllers/isAuthenticated');
 
 router.use(isAuthentcated);
 
-function createSectionSchema(sectionNumber, idReading){
-
-    sectionNumber = Number(sectionNumber);
+//creates a chapter chema for the new reading
+function createSectionSchema(sectionNumber, iD){
 
     let sectionArray = []
 
     for(c=1; c <= sectionNumber; c++){
 
         let newChapter = {
-            chaptername: c.toString(),
-            comments: [],
-            readingId: idReading
+            chaptername: c,
+            readingId: iD
         }
 
         dbChapter = db.Chapter.create(newChapter)
@@ -35,6 +33,7 @@ function createSectionSchema(sectionNumber, idReading){
 
 }
 
+//makes an array for the tag list
 function tagList(listString){
 
     let splitList = listString.split(",");
@@ -44,38 +43,92 @@ function tagList(listString){
 
 // I.N.D.U.C.E.S
 
-//Index
+// Index
 router.get('/', (req, res)=> {
 
     // currentUser: req.session.currentUser
-    
+
     db.Reading.find({ user: req.session.currentUser._id }).then((readings) => {
-        res.render("library/library-home.ejs", {
+        res.render("library/libraryHome.ejs", {
             readings: readings,
             currentUser: req.session.currentUser
         });
       });
 });
 
-//New
+// New
 router.get('/new', (req, res) => {
-    res.render("library/newreading.ejs", { currentUser: req.session.currentUser 
+    res.render("library/newReading.ejs", { currentUser: req.session.currentUser 
     });
 });
 
-//Create
-router.post("/", async (req, res) => {
+// Delete
+router.delete('/:id', async (req, res) =>{
+    await db.Reading.findByIdAndDelete(req.params.id)
+    .then(() => res.redirect('/library'))
+});
+
+// Update
+router.put('/:id', async (req, res) => {
+    let chapArray = [];
+
+    for(h=1; h <= req.body.chapters; h++){
+        chapArray.push(h);
+    }
+
+    req.body.chapters = chapArray;
     req.body.favorite = req.body.favorite === 'on' ? true : false
-
-    req.body.user = req.session.currentUser._id
-
     req.body.tags = tagList(req.body.tags)
 
-    let newReading = await db.Reading.create(req.body);
+    await db.Reading.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true }
+    )
+        .then(reads => res.redirect('/library/' + reads._id))
+})
 
-    newReading.chapters = createSectionSchema(newReading.chapters[0], newReading._id);
+// Create
+router.post("/", async (req, res) => {
+
+    let chapArray = [];
+
+    for(h=1; h <= req.body.chapters; h++){
+        chapArray.push(h);
+    }
+
+    req.body.chapters = chapArray;
+    req.body.favorite = req.body.favorite === 'on' ? true : false
+    req.body.user = req.session.currentUser._id
+    req.body.tags = tagList(req.body.tags)
+    let newReading = await db.Reading.create(req.body); 
+
+    createSectionSchema(newReading.chapters, newReading._id);
     
-    res.redirect('/');
+    res.redirect('/library');
+});
+
+// Edit
+router.get('/:id/edit', (req, res) => {
+    db.Reading.findById(req.params.id)
+        .then(reads => {
+            res.render('library/editReadings.ejs', {
+                reads: reads,
+                currentUser: req.session.currentUser
+            })
+        })
+})
+
+// Show
+router.get('/:rid', (req, res)=> {
+
+    db.Reading.findById(req.params.rid)
+    .then(reads => {
+        res.render('library/showReading.ejs', {
+            reads: reads,
+            currentUser: req.session.currentUser
+        });
+    })
 })
 
 //export so we can use this in other file

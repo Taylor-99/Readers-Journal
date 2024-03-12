@@ -1,0 +1,54 @@
+
+<%- include('../partials/nav.ejs') %>
+
+<h1>Add New Reading</h1>
+
+<form action="/library/<%= reads._id %>?_method=PUT" method="POST" id="addform">
+    <label for="title">Title:</label>
+    <br>
+    <input type="text" name="title" placeholder="Enter the Title" value="<%= reads.title %>"/>
+
+    <br>
+    <label for="author">Author:</label>
+    <br>
+    <input type="text" name="author" placeholder="Enter The Author" value="<%= reads.author %>">
+    <br>
+
+    <label for="description">Description:</label>
+    <br>
+    <textarea rows="3" cols="38" name="description" placeholder="Write a description" value="<%= reads.description %>"></textarea>
+    <br>
+
+    <label for="tags">Tags:</label>
+    <br>
+    <input type="text" name="tags" placeholder="Comma seperated" "/>
+    <br>
+
+    <label for="image">Reading Cover:</label>
+    <br>
+    <input type="text" name="image" placeholder="Enter the cover of the Reading" value="<%= reads.image %>"/>
+    <br>
+
+    <label for="chapters">Number of Chapters or Sections:</label>
+    <br>
+    <input type="number" name="chapters" placeholder="How many chapters or sections are in this reading"/>
+    <br>
+
+    <label for="rating">Give a Rating: </label>
+    <br>
+    <input type="number" name="rating" placeholder="Give a review between 0 and 5" value="<%= reads.rating %>"/>
+    <br>
+
+    <label for="review">Write a review about this reading: </label>
+    <br>
+    <textarea rows="3" cols="38" name="review" placeholder="Write a comment" value="<%= reads.review %>"></textarea>
+    <br>
+
+    <div id="checkfavorite">
+        <label for="favorite">Add to favorites: &nbsp;</label>
+        <input type="checkbox" name="favorite" <%= reads.favorite ? 'checked' : '' %>/>
+    </div>
+    <br>
+    
+    <input type="submit" value="Edit Reading" id="submitadd"/>
+</form>

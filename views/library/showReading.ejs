@@ -1,0 +1,37 @@
+
+<%- include('../partials/nav.ejs') %>
+
+<div>
+    <h3><%= reads.title %></h3>
+    <p><%= reads.author %></p>
+    <p><%= reads.description %></p>
+    <ul>
+        <% reads.chapters.forEach((chapter, chapterIndex)=> { %>
+            <li>
+                <%= chapter %>
+            </li>
+        <% }) %>
+    </ul>
+    
+</div>
+
+<div>
+    <img src="<%= reads.image %>">
+    <p><%= reads.rating %></p>
+    <p><%= reads.review %></p>
+    <ul>
+        <% reads.tags.forEach((tag, tagIndex)=> { %>
+            <li>
+                <%= tag %>
+            </li>
+        <% }) %>
+    </ul>
+</div>
+
+<section>
+    <button class="btn"><a href="/library/<%= reads._id %>/edit">Edit</a></button>
+    
+    <form method="POST" action="/library/<%= reads._id %>?_method=DELETE">
+        <input type="submit" value="Delete" />
+    </form>
+</section>
