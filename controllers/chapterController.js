@@ -10,13 +10,12 @@ const db = require('../models');
 router.get('/:readid/:chapname', (req, res)=> {
 
     db.Chapter.find({readingId: req.params.readid, chaptername: req.params.chapname})
-    .then(
-        (chapter) => res.render("library/showChapter.ejs", {
-            chap: chapter,
+    .then((readChapter) => {
+        res.render("library/showChapter.ejs", {
+            chapter: readChapter,
             currentUser: req.session.currentUser,
-        })
-        // (chapter) => res.send(chapter)
-    )
+        });
+    });
 })
 
 module.exports = router
