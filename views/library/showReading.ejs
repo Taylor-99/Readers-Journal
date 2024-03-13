@@ -7,9 +7,9 @@
     <p><%= reads.description %></p>
     <ul>
         <% reads.chapters.forEach((chapter, chapterIndex)=> { %>
-            <li>
+            <a href="/chapter/<%= reads._id %>/<%= chapter %>"><li>
                 <%= chapter %>
-            </li>
+            </li></a>
         <% }) %>
     </ul>
     

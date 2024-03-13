@@ -12,25 +12,22 @@ const isAuthentcated = require('../controllers/isAuthenticated');
 router.use(isAuthentcated);
 
 //creates a chapter chema for the new reading
-function createSectionSchema(sectionNumber, iD){
+function createSectionSchema(chapterArray, iD, rTitle, rAuthor, rImage, rDescription){
 
-    let sectionArray = []
-
-    for(c=1; c <= sectionNumber; c++){
+    for(c=1; c <= chapterArray.length; c++){
 
         let newChapter = {
             chaptername: c,
+            readTitle: rTitle,
+            readAuthor: rAuthor,
+            readImage: rImage,
+            readDescription: rDescription,
+            comments: [],
             readingId: iD
         }
 
         dbChapter = db.Chapter.create(newChapter)
-
-        sectionArray.push(dbChapter);
-
     }
-
-    return sectionArray
-
 }
 
 //makes an array for the tag list
@@ -45,8 +42,6 @@ function tagList(listString){
 
 // Index
 router.get('/', (req, res)=> {
-
-    // currentUser: req.session.currentUser
 
     db.Reading.find({ user: req.session.currentUser._id }).then((readings) => {
         res.render("library/libraryHome.ejs", {
@@ -103,7 +98,7 @@ router.post("/", async (req, res) => {
     req.body.tags = tagList(req.body.tags)
     let newReading = await db.Reading.create(req.body); 
 
-    createSectionSchema(newReading.chapters, newReading._id);
+    createSectionSchema(newReading.chapters, newReading._id, newReading.title, newReading.author, newReading.image, newReading.description);
     
     res.redirect('/library');
 });
