@@ -24,12 +24,12 @@ nav{
     margin-right: 10vw;
 }
 
-a{
+.navA{
     color: black;
     text-decoration: none;
 }
 
-a:hover{
+.navA:hover{
     color: navajowhite
 }
 
@@ -138,4 +138,57 @@ input[type=checkbox]{
 
 #submitadd:hover{
     background: #CCD5C0;
+}
+
+#readingList{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#readingItem{
+    display: inline-block;
+    padding: 2.5vw;
+    width: 20vw;
+}
+
+#readImage{
+    width: 15vw;
+    height: 20vw;
+    border-width: .2vw;
+    border-style: solid;
+    border-color: antiquewhite;
+}
+
+#underText{
+    display: block;
+    font-family: "Roboto", sans-serif;
+}
+
+.bodyA{
+    color: black;
+    text-decoration: none;
+    font-size: 1.5vw;
+    word-wrap: break-word;
+}
+
+.bodyA:hover{
+    color:rosybrown;
+}
+
+#rating{
+    font-size: 1vw;
+}
+
+#readingInfo{
+    position: absolute;
+    right: 150px;
+    width: 200px;
+    height: 120px;
+}
+
+#readingStats{
+    position: absolute;
+    left: 150px;
+    width: 200px;
+    height: 120px;
 }

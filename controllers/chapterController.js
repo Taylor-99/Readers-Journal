@@ -12,9 +12,10 @@ router.get('/:readid/:chapname', (req, res)=> {
     db.Chapter.find({readingId: req.params.readid, chaptername: req.params.chapname})
     .then((readChapter) => {
         res.render("library/showChapter.ejs", {
-            chapter: readChapter,
+            section: readChapter,
             currentUser: req.session.currentUser,
         });
+        // res.send(readChapter)
     });
 })
 

@@ -1,21 +1,7 @@
 
 <%- include('../partials/nav.ejs') %>
 
-<div>
-    <h3><%= reads.title %></h3>
-    <p><%= reads.author %></p>
-    <p><%= reads.description %></p>
-    <ul>
-        <% reads.chapters.forEach((chapter, chapterIndex)=> { %>
-            <a href="/chapter/<%= reads._id %>/<%= chapter %>"><li>
-                <%= chapter %>
-            </li></a>
-        <% }) %>
-    </ul>
-    
-</div>
-
-<div>
+<div id="readingStats">
     <img src="<%= reads.image %>">
     <p><%= reads.rating %></p>
     <p><%= reads.review %></p>
@@ -26,12 +12,27 @@
             </li>
         <% }) %>
     </ul>
+
 </div>
 
-<section>
-    <button class="btn"><a href="/library/<%= reads._id %>/edit">Edit</a></button>
+<div id="readingInfo">
+    <h3><%= reads.title %></h3>
+    <p><%= reads.author %></p>
+    <p><%= reads.description %></p>
+    <ul>
+        <% reads.chapters.forEach((chapter, chapterIndex)=> { %>
+            <a href="/chapter/<%= reads._id %>/<%= chapter %>"><li>
+                <%= chapter %>
+            </li></a>
+        <% }) %>
+    </ul>
+
+    <section id="readButtons">
+        <button class="btn"><a href="/library/<%= reads._id %>/edit">Edit</a></button>
+        
+        <form method="POST" action="/library/<%= reads._id %>?_method=DELETE">
+            <input type="submit" value="Delete" />
+        </form>
+    </section>
     
-    <form method="POST" action="/library/<%= reads._id %>?_method=DELETE">
-        <input type="submit" value="Delete" />
-    </form>
-</section>
+</div>

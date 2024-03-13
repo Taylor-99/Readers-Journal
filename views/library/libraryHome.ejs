@@ -2,12 +2,14 @@
 <%- include('../partials/nav.ejs') %>
 
 <h1>Library</h1>
-   <ul> 
+   <ul id="readingList"> 
         <% readings.forEach((item, index) => { %>
-        <li>
-            <a href="/library/<%= item._id %>"><img src="<%= item.image %>"></a>
-            <a href="/library/<%= item._id %>"><%= item.title %></a>
-            <p> <%= item.rating %></p>
+        <li id="readingItem">
+            <a href="/library/<%= item._id %>"><img src="<%= item.image %>" id="readImage"></a>
+            <div id="undertext">
+                <a href="/library/<%= item._id %>" class="bodyA"><%= item.title %></a>
+                <p id="rating">Rating: <%= item.rating %></p>
+            </div>
         </li>
         <% }) %>
     </ul>
