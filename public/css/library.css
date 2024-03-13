@@ -179,16 +179,73 @@ input[type=checkbox]{
     font-size: 1vw;
 }
 
+#showReading{
+    display:flex;
+    justify-content:space-between;
+}
+
 #readingInfo{
-    position: absolute;
-    right: 150px;
-    width: 200px;
-    height: 120px;
+    float: right;
+    width: 60vw;
+    height: 20vw;
+    margin: 2vw;
 }
 
 #readingStats{
-    position: absolute;
-    left: 150px;
-    width: 200px;
-    height: 120px;
+    float: left;
+    width: 30vw;
+    height: 20vw;
+    border-right: .2vw solid black;
+    padding: 3vw;
+    height: auto;
 }
+
+#readingImage{
+    width: 20vw;
+    height: 30vw;
+}
+
+#tag{
+    background-color: ivory;
+    color: black;
+    padding: .5vw 1vw;
+    text-align: center;
+    border: .1vw solid lightgrey;
+    display: inline-block;
+    font-size: 1.5vw;
+}
+
+.showText{
+    font-size: 1.5vw;
+}
+
+.labels{
+    font-weight: bold;
+}
+
+#chapterlabel{
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+
+h2{
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    font-weight: 400;
+}
+
+.chapterItems{
+    background-color:floralwhite;
+    color: black;
+    padding: .5vw .5vw;
+    text-align: center;
+    border: .1vw solid lightgrey;
+    display: inline-block;
+    font-size: 1.5vw;
+    text-decoration: none;
+}
+
+.chapterItems:hover{
+    background-color:darkseagreen;
+}
+

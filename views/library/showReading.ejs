@@ -1,38 +1,42 @@
 
 <%- include('../partials/nav.ejs') %>
 
-<div id="readingStats">
-    <img src="<%= reads.image %>">
-    <p><%= reads.rating %></p>
-    <p><%= reads.review %></p>
-    <ul>
-        <% reads.tags.forEach((tag, tagIndex)=> { %>
-            <li>
-                <%= tag %>
-            </li>
-        <% }) %>
-    </ul>
+<div id="showReading">
+    <div id="readingStats">
+        <img src="<%= reads.image %>" id="readingImage">
+        <p class="showText"><span class="labels">Rating:&nbsp;</span> <%= reads.rating %></p>
+        <p class="showText"><span class="labels">Review:&nbsp; </span> <%= reads.review %></p>
+        <p class="showText"><span class="labels">Tags:&nbsp;</span></p>
+        <ul>
+            <% reads.tags.forEach((tag, tagIndex)=> { %>
+                <li id="tag">
+                    <%= tag %>
+                </li>
+            <% }) %>
+        </ul>
 
-</div>
+    </div>
 
-<div id="readingInfo">
-    <h3><%= reads.title %></h3>
-    <p><%= reads.author %></p>
-    <p><%= reads.description %></p>
-    <ul>
-        <% reads.chapters.forEach((chapter, chapterIndex)=> { %>
-            <a href="/chapter/<%= reads._id %>/<%= chapter %>"><li>
-                <%= chapter %>
-            </li></a>
-        <% }) %>
-    </ul>
+    <div id="readingInfo">
+        <h2><%= reads.title %></h2>
+        <p class="showText"> <span class="labels">Author:&nbsp;</span><%= reads.author %></p>
+        <p class="showText"><span class="labels">Description:&nbsp;</span><%= reads.description %></p>
+        <p id="chapterlabel">Chapters:&nbsp;</p>
+        <ul class="showText">
+            <% reads.chapters.forEach((chapter, chapterIndex)=> { %>
+                <a href="/chapter/<%= reads._id %>/<%= chapter %>"><li class="chapterItems">
+                    <%= chapter %>
+                </li></a>
+            <% }) %>
+        </ul>
 
-    <section id="readButtons">
-        <button class="btn"><a href="/library/<%= reads._id %>/edit">Edit</a></button>
+        <section id="readButtons">
+            <button class="btn"><a href="/library/<%= reads._id %>/edit">Edit</a></button>
+            
+            <form method="POST" action="/library/<%= reads._id %>?_method=DELETE">
+                <input type="submit" value="Delete" />
+            </form>
+        </section>
         
-        <form method="POST" action="/library/<%= reads._id %>?_method=DELETE">
-            <input type="submit" value="Delete" />
-        </form>
-    </section>
-    
+    </div>
 </div>
