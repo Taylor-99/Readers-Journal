@@ -249,3 +249,38 @@ h2{
     background-color:darkseagreen;
 }
 
+section{
+    display: flex;
+}
+
+.editBtn{
+    background-color: #757047;
+    padding: .5vw 2vw;
+    text-align: center;
+    border: .1vw solid lightgrey;
+    display: inline-block;
+    font-size: 1.5vw;
+}
+
+#editBtnLink{
+    color: white;
+    text-decoration: none;
+}
+
+.editBtn:hover{
+    background-color: olivedrab;
+}
+
+.deleteBtn{
+    background-color: #a46e42;
+    border: none;
+    color: white;
+    padding: 1vw 2vw;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.5vw;
+}
+
+.deleteBtn:hover{
+    background-color: peru;
+}

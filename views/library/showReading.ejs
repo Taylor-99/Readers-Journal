@@ -31,10 +31,12 @@
         </ul>
 
         <section id="readButtons">
-            <button class="btn"><a href="/library/<%= reads._id %>/edit">Edit</a></button>
+            <button class="editBtn"><a href="/library/<%= reads._id %>/edit" id="editBtnLink">Edit</a></button>
+
+            <p>&nbsp;</p>
             
             <form method="POST" action="/library/<%= reads._id %>?_method=DELETE">
-                <input type="submit" value="Delete" />
+                <input type="submit" value="Delete" class="deleteBtn"/>
             </form>
         </section>
         
