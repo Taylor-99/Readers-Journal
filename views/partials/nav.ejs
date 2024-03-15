@@ -28,13 +28,13 @@
 
                 <li> &nbsp; | &nbsp;</li>
 
-                <li><a href="/library" class="navA">Profile</a></li>
+                <li><a href="/profile/" class="navA">Profile</a></li>
             </nav>
 
             <div id="usernav">
                 <li class="nav-link">Welcome <%= currentUser.username %> &nbsp;</li>
                 <form action="/sessions?_method=DELETE" method="POST">
-                <input type="submit" value="Log Out" id="logout"/>
+                    <input type="submit" value="Log Out" id="logout"/>
                 </form>
             </div>
 

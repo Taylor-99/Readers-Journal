@@ -17,6 +17,7 @@ const userCtrl = require('./controllers/userController.js');
 const sessionCtrl = require('./controllers/sessionController');
 const libraryCtrl = require('./controllers/libraryController');
 const userProfileCtrl = require('./controllers/userProfileController');
+const profileCtrl = require('./controllers/profileController');
 const chapterCtrl = require('./controllers/chapterController');
 
 // Create the Express app
@@ -61,6 +62,7 @@ app.use('/library', libraryCtrl)
 app.use('/users', userCtrl);
 app.use('/sessions', sessionCtrl);
 app.use('/userprofile', userProfileCtrl);
+app.use('/profile', profileCtrl);
 app.use('/chapter', chapterCtrl);
 
 // App Listen

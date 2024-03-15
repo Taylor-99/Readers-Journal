@@ -16,7 +16,7 @@
 
     <label for="description">Description:</label>
     <br>
-    <textarea rows="3" cols="38" name="description" placeholder="Write a description" value="<%= reads.description %>"></textarea>
+    <textarea rows="3" cols="38" name="description" placeholder="Write a description"><%= reads.description %></textarea>
     <br>
 
     <label for="tags">Tags:</label>
@@ -31,7 +31,7 @@
 
     <label for="chapters">Number of Chapters or Sections:</label>
     <br>
-    <input type="number" name="chapters" placeholder="How many chapters or sections are in this reading"/>
+    <input type="number" name="chapters" placeholder="How many chapters or sections are in this reading" value="<%= reads.chapters.length%>"/>
     <br>
 
     <label for="rating">Give a Rating: </label>
@@ -41,7 +41,7 @@
 
     <label for="review">Write a review about this reading: </label>
     <br>
-    <textarea rows="3" cols="38" name="review" placeholder="Write a comment" value="<%= reads.review %>"></textarea>
+    <textarea rows="3" cols="38" name="review" placeholder="Write a comment"><%= reads.review %></textarea>
     <br>
 
     <div id="checkfavorite">

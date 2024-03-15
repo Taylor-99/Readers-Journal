@@ -11,33 +11,6 @@ const isAuthentcated = require('../controllers/isAuthenticated');
 
 router.use(isAuthentcated);
 
-//creates a chapter chema for the new reading
-function createSectionSchema(chapterArray, iD, rTitle, rAuthor, rImage, rDescription){
-
-    for(c=1; c <= chapterArray.length; c++){
-
-        let newChapter = {
-            chaptername: c,
-            readTitle: rTitle,
-            readAuthor: rAuthor,
-            readImage: rImage,
-            readDescription: rDescription,
-            comments: [],
-            readingId: iD
-        }
-
-        dbChapter = db.Chapter.create(newChapter)
-    }
-}
-
-//makes an array for the tag list
-function tagList(listString){
-
-    let splitList = listString.split(",");
-
-    return splitList;
-}
-
 // I.N.D.U.C.E.S
 
 // Index
@@ -63,6 +36,27 @@ router.delete('/:id', async (req, res) =>{
     .then(() => res.redirect('/library'))
 });
 
+function updateAndDelete(lastId, nextId, newChapters, nTitle, nAuthor, nImage, nDescription){
+
+    db.Chapter.deleteMany({readingId: lastId});
+
+    for(n=1; n <= newChapters.length; n++){
+
+        let newChapter = {
+            chaptername: n,
+            readTitle: nTitle,
+            readAuthor: nAuthor,
+            readImage: nImage,
+            readDescription: nDescription,
+            comments: [],
+            readingId: nextId
+        }
+
+        db.Chapter.create(newChapter)
+    }
+
+}
+
 // Update
 router.put('/:id', async (req, res) => {
     let chapArray = [];
@@ -75,13 +69,46 @@ router.put('/:id', async (req, res) => {
     req.body.favorite = req.body.favorite === 'on' ? true : false
     req.body.tags = tagList(req.body.tags)
 
-    await db.Reading.findByIdAndUpdate(
+    let updatedReading = await db.Reading.findByIdAndUpdate(
         req.params.id,
         req.body,
         { new: true }
-    )
-        .then(reads => res.redirect('/library/' + reads._id))
-})
+    ) 
+
+    let oldId = req.params.id
+    let newId = updatedReading._id
+
+    updateAndDelete(oldId, newId, updatedReading.chapters, updatedReading.title, updatedReading.author, updatedReading.image, updatedReading.description);
+
+    res.redirect('/library/' + updatedReading._id)
+});
+
+//creates a chapter chema for the new reading
+function createSectionSchema(chapterArray, iD, rTitle, rAuthor, rImage, rDescription){
+
+    for(c=1; c <= chapterArray.length; c++){
+
+        let newChapter = {
+            chaptername: c,
+            readTitle: rTitle,
+            readAuthor: rAuthor,
+            readImage: rImage,
+            readDescription: rDescription,
+            comments: [],
+            readingId: iD
+        }
+
+        db.Chapter.create(newChapter)
+    }
+}
+
+//makes an array for the tag list
+function tagList(listString){
+
+    let splitList = listString.split(",");
+
+    return splitList;
+}
 
 // Create
 router.post("/", async (req, res) => {
@@ -125,6 +152,8 @@ router.get('/:rid', (req, res)=> {
         });
     })
 })
+
+
 
 //export so we can use this in other file
 module.exports = router
