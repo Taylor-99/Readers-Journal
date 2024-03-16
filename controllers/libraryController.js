@@ -116,6 +116,9 @@ router.put('/:id', async (req, res) => {
 
         res.redirect('/library/' + updatedReading._id)
     }
+    else(
+        res.redirect('/library/' + updatedReading._id)
+    )
 });
 
 //creates a chapter schema for the new reading

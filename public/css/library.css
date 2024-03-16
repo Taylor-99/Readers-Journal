@@ -75,9 +75,13 @@ h1{
     font-weight: 400;
 }
 
+#addheading{
+    margin-right: 70vw;
+}
+
 #addform{
     position: relative;
-    top: 20em;
+    top: 35vw;
     left: 85vw;
     transform: translate(-50%, -50%);
     padding: 10px;
