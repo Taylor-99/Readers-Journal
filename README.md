@@ -79,6 +79,12 @@
 <img width="1440" alt="Screenshot 2024-03-16 at 5 21 34 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/341809cc-f21c-472c-b5dc-fe9bb1928f80">
 <img width="1440" alt="Screenshot 2024-03-16 at 5 54 44 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/dad1e16f-037b-48fc-bc22-cfd0f2884dea">
 <img width="1440" alt="Screenshot 2024-03-16 at 5 55 10 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/cf539512-277e-4929-ae4e-fbfe7c69851d">
+<img width="1420" alt="Screenshot 2024-03-16 at 6 41 05 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/fda1b683-2160-4750-8f6d-489bfb48079c">
+<img width="1420" alt="Screenshot 2024-03-16 at 6 41 59 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/1aa49a08-3680-4f24-b87f-349aeb1d03a0">
+<img width="1427" alt="Screenshot 2024-03-16 at 6 45 09 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/2a5d4451-e852-48dd-b1af-8acca6c6343d">
+<img width="1426" alt="Screenshot 2024-03-16 at 6 45 46 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/08994843-2fe8-4cf1-895d-3dae2400d680">
+<img width="1425" alt="Screenshot 2024-03-16 at 6 47 11 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/1dadca68-ed2f-46c6-8d63-f90e789c94a2">
+<img width="1426" alt="Screenshot 2024-03-16 at 6 48 56 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/12b23501-3fca-4192-99b8-64c40d4e6454">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
