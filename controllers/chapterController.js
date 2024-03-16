@@ -33,42 +33,6 @@ router.post('/:chapterid', (req, res)=> {
      })
 });
 
-// Update
-router.put('/:eid/:eIndex', async (req, res) => {
-
-    let editComment = {
-        comment: req.body.comment.concat("\t (edited)"),
-        date: req.body.date
-    }
-
-   db.Chapter.find({_id: req.params.eid})
-    .then((useChapter)=> {
-        db.Chapter.findOneAndUpdate(
-            { _id: req.params.eid },
-            {$set: {[`comments.$[${req.params.eIndex}]`]: editComment}},
-            {new: true}
-        )
-        .then(
-            res.redirect(`/chapter/${useChapter[0].readingId}/${useChapter[0].chaptername}`)
-        )
-    })
-});
-
-// https://stackoverflow.com/questions/11372065/mongodb-how-do-i-update-a-single-subelement-in-an-array-referenced-by-the-inde
-
-// Edit
-router.get('/:cid/:cindex/edit', (req, res) => {
-    db.Chapter.findById(req.params.cid)
-        .then(fChapter => {
-            res.render('library/editComment.ejs', {
-                comment: fChapter.comments[req.params.cindex],
-                currentUser: req.session.currentUser,
-                chapterId: fChapter._id.toString(),
-                uIndex: req.params.cindex
-            })
-        })
-});
-
 // Index
 router.get('/:readid/:chapname', (req, res)=> {
     db.Chapter.find({readingId: req.params.readid, chaptername: req.params.chapname})

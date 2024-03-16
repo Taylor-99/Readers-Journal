@@ -22,10 +22,6 @@
                 <p>&emsp;<span class="labels">Date: </span> <%= comment.date %></p>
 
                 <section id="readButtons">
-                    <button class="editBtn"><a href="/chapter/<%= section[0]._id %>/<%= commentIndex %>/edit" id="editBtnLink">Edit</a></button>
-        
-                    <p>&nbsp;</p>
-                    
                     <form method="POST" action="/chapter/<%= section[0]._id %>/<%= commentIndex %>?_method=DELETE">
                         <input type="submit" value="Delete" class="deleteBtn"/>
                     </form>
