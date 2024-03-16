@@ -34,7 +34,7 @@ router.get('/', (req, res)=> {
 
 // New
 router.get('/new', (req, res) => {
-    res.render("./library/newReading.ejs", 
+    res.render("../library/newReading.ejs", 
     { currentUser: req.session.currentUser});
 });
 
