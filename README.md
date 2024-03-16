@@ -69,17 +69,6 @@
 <a href="(https://www.figma.com/file/E5OvA94sPSgQnZdOoTPuFw/Project-2?type=design&node-id=0-1&mode=design&t=Rlf7oQHgk9tXkQFF-0)">WireFrame</a>
 
 <img width="1439" alt="Screenshot 2024-03-16 at 5 19 24 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/ad8a6e57-40ff-41c0-8005-dc5c8333334f">
-<img width="1440" alt="Screenshot 2024-03-16 at 5 19 56 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/c748e18a-c270-4457-8d3f-ce199095c643">
-<img width="1439" alt="Screenshot 2024-03-16 at 5 20 24 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/74cd97f0-417e-4f48-a8fc-eb1e608dd91c">
-<img width="1440" alt="Screenshot 2024-03-16 at 5 21 34 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/341809cc-f21c-472c-b5dc-fe9bb1928f80">
-<img width="1440" alt="Screenshot 2024-03-16 at 5 54 44 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/dad1e16f-037b-48fc-bc22-cfd0f2884dea">
-<img width="1440" alt="Screenshot 2024-03-16 at 5 55 10 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/cf539512-277e-4929-ae4e-fbfe7c69851d">
-<img width="1420" alt="Screenshot 2024-03-16 at 6 41 05 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/fda1b683-2160-4750-8f6d-489bfb48079c">
-<img width="1420" alt="Screenshot 2024-03-16 at 6 41 59 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/1aa49a08-3680-4f24-b87f-349aeb1d03a0">
-<img width="1427" alt="Screenshot 2024-03-16 at 6 45 09 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/2a5d4451-e852-48dd-b1af-8acca6c6343d">
-<img width="1426" alt="Screenshot 2024-03-16 at 6 45 46 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/08994843-2fe8-4cf1-895d-3dae2400d680">
-<img width="1425" alt="Screenshot 2024-03-16 at 6 47 11 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/1dadca68-ed2f-46c6-8d63-f90e789c94a2">
-<img width="1426" alt="Screenshot 2024-03-16 at 6 48 56 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/12b23501-3fca-4192-99b8-64c40d4e6454">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,6 +82,20 @@
 * Express
 * MongoDB
 * Node.js
+* EJS
+  
+Dependencies
+* bcrypt
+* connect-livereload
+* dotenv
+* ejs
+* express
+* express-session
+* livereload
+* method-override
+* mongoose
+* modemon
+* path
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -123,6 +126,29 @@
 * Reviewing the redings by rating it and adding a review
 * Commenting on the different sections or chapters of the readings
 * View readings they deam favorite
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- MVP -->
+## MVP
+
+* Users will login to create a profile
+* Users will be able to see their library with their readings that they added
+* Users will add their readings they have read or still reading to their library
+* Users can comment on and rate the reading
+* Users can comment on individual chapters or sections of the readings
+* Users can view heir profile that shows their image, interest, biography, username, and readings and their library
+* Users are able to see their favorite readings
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- Stretch Goals -->
+## Stretch Goals
+
+* Users can invite others to comment on their reading and on chapter
+* Using API to browse new readings or add books to user Library
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
