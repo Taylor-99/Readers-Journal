@@ -85,8 +85,6 @@ router.put('/:id', async (req, res) => {
 
     let pastChapterL = currentReading[0].chapters.length
 
-    // console.log(currentReading.re)
-
     let chapArray = [];
 
     for(h=1; h <= req.body.chapters; h++){
