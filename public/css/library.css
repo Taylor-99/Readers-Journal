@@ -10,9 +10,7 @@ body{
 
 header{
     display: block;
-    position: relative;
-    top: 0;
-    left: 0;
+    height: auto;
     width: 100%;
     background: #c5a491;
     margin: 0;
