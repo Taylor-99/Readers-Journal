@@ -1,9 +1,9 @@
 
 <%- include('../partials/nav.ejs') %>
 
-<div id="createscreen">
+<div id="addform">
 
-    <p class="loginheader">Edit Profile</p>
+    <h1 id="addheading">Edit Profile</h1>
 
     <form action="/profile/<%= profile._id %>?_method=PUT" method="POST">
         <label for="name" class="formtext">Name: </label>

@@ -373,5 +373,6 @@ section{
 }
 
 #favoriteSection{
-    background-color:peru;
+    background-color:burlywood;
+    border: .3vw solid grey;
 }
