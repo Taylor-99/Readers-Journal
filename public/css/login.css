@@ -132,6 +132,15 @@ input[type=text] {
     cursor: text;
 }
 
+input[type=password]{
+    border: 2px solid rgb(175, 175, 175);
+    border-radius: 4px;
+    margin: 10px 0;
+    font-size: 1.5vw;
+    font-family: "Roboto", sans-serif;
+    cursor: text;
+}
+
 .logininput{
     padding: 5px 10px;
 }
