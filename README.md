@@ -36,8 +36,6 @@
 
   <p align="center">
     Reader's Journal allows readers to keep track of what they read to look back on later. Reader's can track any form of reading, whether a book, a comic, or even research papers. Readers are able to leave comments on their readings as a whole, or comment on specific chapters or sections in the readings. Keep track of your personal library
-    <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
 </div>
 
 
@@ -113,9 +111,10 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+* Logging anything the user reads
+* Reviewing the redings by rating it and adding a review
+* Commenting on the different sections or chapters of the readings
+* View readings they deam favorite
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -124,12 +123,19 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+- [ ] Create a profile
+- [ ] Log In
+- [ ] Add Reading
+    - [ ] View Reading Info
+        - [ ] Edit reading info
+        - [ ] Delete reading
+        - [ ] View reading chapter comment
+            - [ ] Add chapter comment
+            - [ ] Edit chapter comments
+            - [ ] Delete chapter comments
+- [ ] View Profile
+    - [ ] View favorites
+    - [ ] Edit profile
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -165,9 +171,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Taylor Young - Tayloryoung99@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/github_username/repo_name](https://github.com/Taylor-99/Readers-Journal)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
