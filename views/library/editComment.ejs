@@ -1,0 +1,20 @@
+
+
+<%- include('../partials/nav.ejs') %>
+
+<h1>Add New Reading</h1>
+
+<form action="/chapter/<%= chapterId %>/<%= uIndex %>?_method=PUT" method="POST">
+    <label for="comment">Comment:</label>
+    <br>
+    <textarea rows="6" cols="38" name="comment" placeholder="Write a comment"><%= comment.comment %></textarea>
+    <br>
+
+    <br>
+    <label for="date">Date:</label>
+    <br>
+    <input type="date" name="date"/>
+    <br>
+
+    <input type="submit" value="Update Comment" id="submitadd"/>
+</form>

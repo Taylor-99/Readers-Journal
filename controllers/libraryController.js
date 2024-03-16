@@ -11,6 +11,14 @@ const isAuthentcated = require('../controllers/isAuthenticated');
 
 router.use(isAuthentcated);
 
+//makes an array for the tag list
+function tagList(listString){
+
+    let splitList = listString.split(",");
+
+    return splitList;
+}
+
 // I.N.D.U.C.E.S
 
 // Index
@@ -36,29 +44,49 @@ router.delete('/:id', async (req, res) =>{
     .then(() => res.redirect('/library'))
 });
 
-function updateAndDelete(lastId, nextId, newChapters, nTitle, nAuthor, nImage, nDescription){
+function addChapters(idNew, diff, oldLength, nTitle, nAuthor, nImage, nDescription){
 
-    db.Chapter.deleteMany({readingId: lastId});
+    let addChap = 1
 
-    for(n=1; n <= newChapters.length; n++){
+    for(a=0; a < diff; a++){
+        db.Chapter.create(
+            {
+                chaptername: (oldLength + addChap),
+                readTitle: nTitle,
+                readAuthor: nAuthor,
+                readImage: nImage,
+                readDescription: nDescription,
+                comments: [],
+                readingId: idNew
+            }
+        )
 
-        let newChapter = {
-            chaptername: n,
-            readTitle: nTitle,
-            readAuthor: nAuthor,
-            readImage: nImage,
-            readDescription: nDescription,
-            comments: [],
-            readingId: nextId
-        }
-
-        db.Chapter.create(newChapter)
+        addChap = addChap + 1
     }
+}
 
+function deleteChapters(idNew, newArrLength, oldArrLength){
+
+    let deleteChap = 0;
+
+    for(o = oldArrLength; o === newArrLength; o--){
+        db.Chapter.findOneAndDelete({readingId: idNew, chaptername: (oldArrLength-deleteChap)});
+
+        deleteChap = deleteChap + 1
+
+        oldArrLength = oldArrLength-deleteChap
+    }
 }
 
 // Update
 router.put('/:id', async (req, res) => {
+
+    let currentReading = await db.Reading.find({_id: req.params.id})
+
+    let pastChapterL = currentReading[0].chapters.length
+
+    // console.log(currentReading.re)
+
     let chapArray = [];
 
     for(h=1; h <= req.body.chapters; h++){
@@ -72,42 +100,39 @@ router.put('/:id', async (req, res) => {
     let updatedReading = await db.Reading.findByIdAndUpdate(
         req.params.id,
         req.body,
-        { new: true }
     ) 
 
-    let oldId = req.params.id
     let newId = updatedReading._id
 
-    updateAndDelete(oldId, newId, updatedReading.chapters, updatedReading.title, updatedReading.author, updatedReading.image, updatedReading.description);
+    if(chapArray.length > pastChapterL){
+        let chapDiff = chapArray.length - pastChapterL
+        addChapters(newId, chapDiff, pastChapterL, updatedReading.title, updatedReading.author, updatedReading.image, updatedReading.description);
 
-    res.redirect('/library/' + updatedReading._id)
+        res.redirect('/library/' + updatedReading._id)
+
+    }
+    else if(chapArray.length < pastChapterL){
+        deleteChapters(newId, chapArray.length, pastChapterL);
+
+        res.redirect('/library/' + updatedReading._id)
+    }
 });
 
-//creates a chapter chema for the new reading
+//creates a chapter schema for the new reading
 function createSectionSchema(chapterArray, iD, rTitle, rAuthor, rImage, rDescription){
 
     for(c=1; c <= chapterArray.length; c++){
 
-        let newChapter = {
-            chaptername: c,
-            readTitle: rTitle,
-            readAuthor: rAuthor,
-            readImage: rImage,
-            readDescription: rDescription,
-            comments: [],
-            readingId: iD
-        }
-
-        db.Chapter.create(newChapter)
+        db.Chapter.create({
+                chaptername: c,
+                readTitle: rTitle,
+                readAuthor: rAuthor,
+                readImage: rImage,
+                readDescription: rDescription,
+                comments: [],
+                readingId: iD
+            })
     }
-}
-
-//makes an array for the tag list
-function tagList(listString){
-
-    let splitList = listString.split(",");
-
-    return splitList;
 }
 
 // Create

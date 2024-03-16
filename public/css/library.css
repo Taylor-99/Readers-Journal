@@ -9,6 +9,11 @@ body{
 }
 
 header{
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
     background: #c5a491;
     margin: 0;
     padding: .5em;
@@ -74,7 +79,7 @@ h1{
 
 #addform{
     position: relative;
-    top: 30vw;
+    top: 20em;
     left: 85vw;
     transform: translate(-50%, -50%);
     padding: 10px;
@@ -255,12 +260,14 @@ section{
 
 .editBtn{
     background-color: #757047;
-    padding: .5vw 2vw;
+    padding: 1vw 2vw;
     text-align: center;
     border: .1vw solid lightgrey;
     display: inline-block;
     font-size: 1.5vw;
 }
+
+/* https://www.w3schools.com/css/css_link.asp */
 
 #editBtnLink{
     color: white;
@@ -283,4 +290,86 @@ section{
 
 .deleteBtn:hover{
     background-color: peru;
+}
+
+#readingspecs{
+    float: left;
+    width: 30vw;
+    height: 20vw;
+    border-right: .2vw solid black;
+    padding: 3vw;
+    height: auto;
+}
+
+#readingcomments{
+    float: right;
+    width: 60vw;
+    height: 20vw;
+    margin: 2vw;
+}
+
+#commentlabel{
+    font-size: 2vw;
+    font-family: "Roboto", sans-serif;
+}
+
+#comments{
+    font-size: 1.5vw;
+    font-family: "Roboto", sans-serif;
+}
+
+#addcomment{
+    background-color:rosybrown;
+    padding: 1vw 2vw;
+    text-align: center;
+    border: .1vw solid lightgrey;
+    display: inline-block;
+    font-size: 1.5vw;
+}
+
+#addcomment:hover{
+    background-color:darksalmon;
+    
+}
+
+#profileInfo{
+    float: left;
+    width: 30vw;
+    height: 20vw;
+    border-right: .2vw solid black;
+    padding: 3vw;
+    height: auto;
+}
+
+#profileLibrary{
+    float: right;
+    width: 60vw;
+    height: 20vw;
+    margin: 2vw;
+}
+
+#profilepic{
+    border-radius: 50%;
+    width: 20vw;
+    height: 20vw;
+}
+
+#profileName{
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5vw;
+}
+
+#profileusername{
+    color:gray;
+    font-family: "Roboto", sans-serif;
+    font-size: 1vw;
+}
+
+#profilebio{
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5vw;
+}
+
+#favoriteSection{
+    background-color:peru;
 }

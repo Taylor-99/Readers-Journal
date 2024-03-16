@@ -1,0 +1,52 @@
+
+<%- include('../partials/nav.ejs') %>
+
+<div id="profileInfo">
+    <img id="profilepic" src="<%= profile[0].image %>">
+    <p id="profileName"><%= profile[0].name %></p>
+    <p id="profileusername">@<%= profile[0].username %></p>
+    <p id="profilebio"><%= profile[0].bio %></p>
+    <p class="labels">Interest:</p>
+    <ul>
+        <% profile[0].interest.forEach((item, itemIndex)=> { %>
+            <li id="tags"><%= item %></li>
+            <% }) %>
+    </ul>
+    <button class="editBtn"><a href="/profile/<%= profId %>/edit" id="editBtnLink">Edit Profile</a></button>
+</div>
+
+<div id="profileLibrary">
+
+    <div id="favoriteSection">
+        <h1>Favorites &#127775;</h1>
+        <ul id="readingList"> 
+            <% readings.forEach((read, index) => { %>
+                <% if(read.favorite === true) {%>
+                    <li id="readingItem">
+                        <a href="/library/<%= read._id %>"><img src="<%= read.image %>" id="readImage"></a>
+                        <div id="undertext">
+                            <a href="/library/<%= read._id %>" class="bodyA"><%= read.title %></a>
+                        </div>
+                    </li>
+                <% } %>
+            <% }) %>
+        </ul>
+    </div>
+
+    <div>
+        <h1>Readings</h1>
+        <ul id="readingList"> 
+            <% readings.forEach((read, index) => { %>
+                <% if(read.favorite == false) {%>
+                    <li id="readingItem">
+                        <a href="/library/<%= read._id %>"><img src="<%= read.image %>" id="readImage"></a>
+                        <div id="undertext">
+                            <a href="/library/<%= read._id %>" class="bodyA"><%= read.title %></a>
+                        </div>
+                    </li>
+                <% } %>
+            <% }) %>
+        </ul>
+    </div>
+
+</div>

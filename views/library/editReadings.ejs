@@ -1,7 +1,7 @@
 
 <%- include('../partials/nav.ejs') %>
 
-<h1>Add New Reading</h1>
+<h1>Edit Reading</h1>
 
 <form action="/library/<%= reads._id %>?_method=PUT" method="POST" id="addform">
     <label for="title">Title:</label>
@@ -21,7 +21,7 @@
 
     <label for="tags">Tags:</label>
     <br>
-    <input type="text" name="tags" placeholder="Comma seperated" "/>
+    <input type="text" name="tags" placeholder="Comma seperated" value="<%= reads.tags %>"/>
     <br>
 
     <label for="image">Reading Cover:</label>

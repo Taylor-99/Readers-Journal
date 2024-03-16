@@ -3,52 +3,56 @@
 
 <h1>Add New Reading</h1>
 
-<form action="/library/" method="POST" id="addform">
-    <label for="title">Title:</label>
-    <br>
-    <input type="text" name="title" placeholder="Enter the Title"/>
+<div id="addform">
 
-    <br>
-    <label for="author">Author:</label>
-    <br>
-    <input type="text" name="author" placeholder="Enter The Author"/>
-    <br>
+    <form action="/library/" method="POST">
+        <label for="title">Title:</label>
+        <br>
+        <input type="text" name="title" placeholder="Enter the Title"/>
 
-    <label for="description">Description:</label>
-    <br>
-    <textarea rows="3" cols="38" name="description" placeholder="Write a description"></textarea>
-    <br>
+        <br>
+        <label for="author">Author:</label>
+        <br>
+        <input type="text" name="author" placeholder="Enter The Author"/>
+        <br>
 
-    <label for="tags">Tags:</label>
-    <br>
-    <input type="text" name="tags" placeholder="Comma seperated"/>
-    <br>
+        <label for="description">Description:</label>
+        <br>
+        <textarea rows="3" cols="38" name="description" placeholder="Write a description"></textarea>
+        <br>
 
-    <label for="image">Reading Cover:</label>
-    <br>
-    <input type="text" name="image" placeholder="Enter the cover of the Reading"/>
-    <br>
+        <label for="tags">Tags:</label>
+        <br>
+        <input type="text" name="tags" placeholder="Comma seperated"/>
+        <br>
 
-    <label for="chapters">Number of Chapters or Sections:</label>
-    <br>
-    <input type="number" name="chapters" placeholder="How many chapters or sections are in this reading"/>
-    <br>
+        <label for="image">Reading Cover:</label>
+        <br>
+        <input type="text" name="image" placeholder="Enter the cover of the Reading"/>
+        <br>
 
-    <label for="rating">Give a Rating: </label>
-    <br>
-    <input type="number" name="rating" placeholder="Give a review between 0 and 5"/>
-    <br>
+        <label for="chapters">Number of Chapters or Sections:</label>
+        <br>
+        <input type="number" name="chapters" placeholder="How many chapters or sections are in this reading"/>
+        <br>
 
-    <label for="review">Write a review about this reading: </label>
-    <br>
-    <textarea rows="3" cols="38" name="review" placeholder="Write a comment"></textarea>
-    <br>
+        <label for="rating">Give a Rating: </label>
+        <br>
+        <input type="number" name="rating" placeholder="Give a review between 0 and 5"/>
+        <br>
 
-    <div id="checkfavorite">
-        <label for="favorite">Add to favorites: &nbsp;</label>
-        <input type="checkbox" name="favorite"/>
-    </div>
-    <br>
-    
-    <input type="submit" value="Add Reading" id="submitadd"/>
-</form>
+        <label for="review">Write a review about this reading: </label>
+        <br>
+        <textarea rows="3" cols="38" name="review" placeholder="Write a comment"></textarea>
+        <br>
+
+        <div id="checkfavorite">
+            <label for="favorite">Add to favorites: &nbsp;</label>
+            <input type="checkbox" name="favorite"/>
+        </div>
+        <br>
+        
+        <input type="submit" value="Add Reading" id="submitadd"/>
+    </form>
+
+</div>

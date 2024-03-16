@@ -1,21 +1,43 @@
 <%- include('../partials/nav.ejs') %>
 
-<div>
-    <img src="<%= section.readImage[0] %>" id="readingImage">
-    <p><span>Title:</span><%= section[0].readTitle %></p>
-    <p><span>Author: </span><%= section[0].readAuthor %></p>
-    <p><span>Description: </span><%= section[0].readDescription %></p>
+<div id="readingspecs">
+    <img src="<%= section[0].readImage %>" id="readingImage">
+    <p class="showText"><span class="labels">Title:</span><%= section[0].readTitle %></p>
+    <p class="showText"><span class="labels">Author: </span><%= section[0].readAuthor %></p>
+    <p class="showText"><span class="labels">Description: </span><%= section[0].readDescription %></p>
 
 </div>
 
-<div>
+<div id="readingcomments">
     <h1>Chapter / Section: <%= section[0].chaptername %></h1>
 
-    <p>Comments: </p>
+    <p id="commentlabel">Comments: </p>
+    <br>
+
+    <ul>
+        <% section[0].comments.forEach((comment, commentIndex)=> { %>
+            <li id="comments">
+                <%= comment.comment %>
+                <br>
+                <p>&emsp;<span class="labels">Date: </span> <%= comment.date %></p>
+
+                <section id="readButtons">
+                    <button class="editBtn"><a href="/chapter/<%= section[0]._id %>/<%= commentIndex %>/edit" id="editBtnLink">Edit</a></button>
+        
+                    <p>&nbsp;</p>
+                    
+                    <form method="POST" action="/chapter/<%= section[0]._id %>/<%= commentIndex %>?_method=DELETE">
+                        <input type="submit" value="Delete" class="deleteBtn"/>
+                    </form>
+                </section>
+                <br>
+            </li>
+        <% }) %>
+    </ul>
 
     <section>
-        <button>
-            <a href="/chapter/<%= section[0]._id %>/new">Add Comment</a>
+        <button id="addcomment">
+            <a href="/chapter/<%= id %>/new" id="editBtnLink">Add Comment</a>
         </button>
     </section>
 </div>

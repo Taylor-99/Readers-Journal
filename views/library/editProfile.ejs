@@ -1,0 +1,32 @@
+
+<%- include('../partials/nav.ejs') %>
+
+<div id="createscreen">
+
+    <p class="loginheader">Edit Profile</p>
+
+    <form action="/profile/<%= profile._id %>?_method=PUT" method="POST">
+        <label for="name" class="formtext">Name: </label>
+        <br>
+        <input type="text" name="name" required class="createinput" value="<%= profile.name %>">
+        <br>
+
+        <label for="bio" class="formtext">Tell us about yourself: </label>
+        <br>
+        <textarea rows="5" cols="38" name="bio" placeholder="Add a Bio" id="bioinput"><%= profile.bio %></textarea>
+        <br>
+
+        <label for="interest" class="formtext">What are your interests or hobbies: </label>
+        <br>
+        <input type="text" name="interest" placeholder="comma seperated" class="createinput" value="<%= profile.interest %>">
+        <br>
+
+        <label for="image" class="formtext">Upload a Profile Picture: </label>
+        <br>
+        <input type="text" name="image" placeholder=".png, .jpeg, .jpg, etc." class="createinput" value="<%= profile.image %>">
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</div>
