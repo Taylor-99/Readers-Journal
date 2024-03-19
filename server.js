@@ -22,7 +22,6 @@ const chapterCtrl = require('./controllers/chapterController');
 
 // Create the Express app
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 // Define a function that will refresh the browser when nodemon restarts
 const liveReloadServer = livereload.createServer();
@@ -66,6 +65,6 @@ app.use('/profile', profileCtrl);
 app.use('/chapter', chapterCtrl);
 
 // App Listen
-app.listen(PORT, ()=> {
-    console.log("Listening to port", PORT);
+app.listen(process.env.PORT||3000, ()=> {
+    console.log("Listening to port");
   });  

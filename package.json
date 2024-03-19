@@ -1,6 +1,9 @@
 {
   "name": "readers-journal",
   "version": "1.0.0",
+  "engines": {
+    "node": "18.19.0"
+  },
   "description": "Project 2 where users can track their readings and comment on the reading and the chapter / section",
   "main": "server.js",
   "scripts": {
