@@ -66,7 +66,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<a href="(https://www.figma.com/file/E5OvA94sPSgQnZdOoTPuFw/Project-2?type=design&node-id=0-1&mode=design&t=Rlf7oQHgk9tXkQFF-0)">WireFrame</a>
+<a href="https://www.figma.com/file/E5OvA94sPSgQnZdOoTPuFw/Project-2?type=design&node-id=0-1&mode=design&t=Rlf7oQHgk9tXkQFF-0">WireFrame</a>
+
+<a href="https://readersjournal-27f55d6eb9b9.herokuapp.com/library">Reader's Journal Web App</a>
 
 <img width="1439" alt="Screenshot 2024-03-16 at 5 19 24 AM" src="https://github.com/Taylor-99/Readers-Journal/assets/86860002/ad8a6e57-40ff-41c0-8005-dc5c8333334f">
 
@@ -203,9 +205,9 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Taylor Young - Tayloryoung99@gmail.com
+Taylor Young - <a href="Taylor.e.young@gmail.com" >Taylor.e.young99@gmail.com</a>
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/Taylor-99/Readers-Journal)
+Project Link: <a href="https://github.com/Taylor-99/Readers-Journal">Reader's Journal Repo</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
